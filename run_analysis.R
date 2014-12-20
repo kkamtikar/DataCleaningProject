@@ -2,16 +2,15 @@
 # Created by: Kirti Kamtikar
 # https://github.com/kkamtikar/
 
-# Refer to the README for the project background and files used in the project.
-# Refer to the CodeBook.md for details of the steps involved in this analysis and 
-# details of the variables used in this analysis and final output - TidyData.
+# Refer to the README for the project background and files used in the project and deatiled explanation of the steps
+# involved in this analysis.
+# Refer to the CodeBook.md for details of the variables used in this analysis and final output - TidyData.
 
 # As described in the README.md, make sure that the zipped file containing data files is downloaded and extracted.
 # UCI HAR Dataset contains train and test folders with all the specified data files.
 
 # getwd()
 # setwd to the desired location.
-# "UCI HAR Dataset" is assumed to be the working directory for all the paths.
 # Set the working directory and/ or all the paths for read.table statements appropriately.
 
 #-------------------------------------------------------------------------------------------------------------------------
