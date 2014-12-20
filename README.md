@@ -38,6 +38,7 @@ The run_analysis.R-
 
 
 **Notes:**
+
 1. Before starting the process, set the *working directory* to where the extracted "UCI HAR Dataset" folder is. It is assumed to be working directory for all the paths in the R file.
 For example, "read.table("./train/X_train.txt", header=FALSE, sep="")" reads from UCI HAR Dataset --> train --> X_train.txt.
 
