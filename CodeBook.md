@@ -1,7 +1,8 @@
-* Created Date: 19-Dec-2014
-* Created by: Kirti Kamtikar
-* https://github.com/kkamtikar
+Created Date: 19-Dec-2014
 
+Created by: Kirti Kamtikar
+
+https://github.com/kkamtikar
 
 This file contains
 * Data dictionary for run_analysis and tidyData.txt
@@ -13,103 +14,103 @@ This file contains
    
 *xtest* 
    
-   Data frame to store X_test.txt - data pertaining to testing (Features as described in features.txt)
+    Data frame to store X_test.txt - data pertaining to testing (Features as described in features.txt)
    
 *clubx*
 
-  Data frame to store combined rows of xtrain and xtest data frames (in that order)
+    Data frame to store combined rows of xtrain and xtest data frames (in that order)
 
 *ytrain*
   
-  Data frame to store y_train.txt - training data pertaining to activities
+    Data frame to store y_train.txt - training data pertaining to activities
   
-  1..6 Activities (As described in activity_labels.txt)
+       1..6 Activities (As described in activity_labels.txt)
+   
+         1 .1 WALKING
   
-  1 .1 WALKING
+         2 .2 WALKING_UPSTAIRS
   
-  2 .2 WALKING_UPSTAIRS
+         3 .3 WALKING_DOWNSTAIRS
   
-  3 .3 WALKING_DOWNSTAIRS
+         4 .4 SITTING
   
-  4 .4 SITTING
+         5 .5 STANDING
   
-  5 .5 STANDING
-  
-  6 .6 LAYING
+         6 .6 LAYING
 
-  *ytest*
+*ytest*
   
-  Data frame to store y_test.txt - testing data pertaining to activities
+    Data frame to store y_test.txt - testing data pertaining to activities
   
-  1..6 Activities (As described in activity_labels.txt)
+     1..6 Activities (As described in activity_labels.txt)
   
-  1 .1 WALKING
+     1 .1 WALKING
   
-  2 .2 WALKING_UPSTAIRS
+     2 .2 WALKING_UPSTAIRS
   
-  3 .3 WALKING_DOWNSTAIRS
+     3 .3 WALKING_DOWNSTAIRS
   
-  4 .4 SITTING
+     4 .4 SITTING
   
-  5 .5 STANDING
+     5 .5 STANDING
   
-  6 .6 LAYING
+     6 .6 LAYING
   
 *cluby*
   
-  Data frame to store combined rows of ytrain and ytest data frames (in that order)
+    Data frame to store combined rows of ytrain and ytest data frames (in that order)
 
 *subTrain*
   
-  Data frame to store subject_train.txt - training data pertaining to subjects
+    Data frame to store subject_train.txt - training data pertaining to subjects
   
-  1..30 IDs of participating subjects
+      1..30 IDs of participating subjects
   
 *subTest*
   
-  Data frame to store subject_test.txt - training data pertaining to subjects
+    Data frame to store subject_test.txt - training data pertaining to subjects
   
-  1..30 IDs of participating subjects
+     1..30 IDs of participating subjects
 
 *clubSub*
   
-  Data frame to store combined rows of subTrain and subTest data frames
+    Data frame to store combined rows of subTrain and subTest data frames
 
 *mergeDataSet*
    
-   Data frame containing activity and Subject IDs combined with the training and testing data
+    Data frame containing activity and Subject IDs combined with the training and testing data
    
 *features*
    
-   Data frame to store features.txt
+    Data frame to store features.txt
    
- *featuresNames *
+*featuresNames*
  
-   Character vector with the column name values to be assigned to mergeDataSet
+    Character vector with the column name values to be assigned to mergeDataSet
 
- *meanSet*
+*meanSet*
    
-   Features with names containing "mean()"
-   
- *stdSet*
-
-   Features with names containing "std()"
-   
- *act_sub*
-   
-   Features for Activity and SubjectID
-   
- *mean_std_set*
-   
-   Data frame with columns for Activity and SubjectID, and features corresponding to "mean()", "std()" (in that order)
+    Features with names containing "mean()"
   
- *activityData*
+*stdSet*
+
+    Features with names containing "std()"
+   
+*act_sub*
+   
+    Features for Activity and SubjectID
+   
+*mean_std_set*
+   
+    Data frame with columns for Activity and SubjectID, and features corresponding to "mean()", "std()" (in that order)
+  
+*activityData*
 
     Data frame to store activity_labels.txt - data pertaining to activities.
 	
- *activity_labels*
+*activity_labels*
    
-   Factor corresponding to the activity labels in activity_labels.txt (As described in activity_labels.txt)
+    Factor corresponding to the activity labels in activity_labels.txt (As described in activity_labels.txt)
        
        .WALKING
        
@@ -123,122 +124,190 @@ This file contains
        
        .LAYING
 	   
-  *descTimeNames*
+*descTimeNames*
     
     Temporary storage for performing column names starting with 't' and replacing with 'time' to indicate time features
 	
-  *descTimeFreqNames*
+*descTimeFreqNames*
    
     Temporary storage for performing column names starting with 'f' and replacing with 'freq' to indicate frequency features
 
-  *desc_labels*
+*desc_labels*
     
     Character vector with descriptive column names
 	* Feature names starting with 't' updated to start with 'time'
 	* Feature names starting with 'f' updated to start with 'freq'
 	* "()" updated to fun - abbreviation of function
 
- *dataMelt*
+*dataMelt*
 
-  Data frame to store melted data with Subject ID, Activity, variable, and value corresponding to each of these combinations.
+    Data frame to store melted data with Subject ID, Activity, variable, and value corresponding to each of these   combinations.
   
- *tidyData*
+*tidyData*
   
-  Data frame with summarised data grouped by given SubjectID, Activity, variable/ feature with corresponding mean values.
-  The tidyData set includes
-  * SubjectID
-   ** 1..30 IDs of participating subjects
+    Data frame with summarised data grouped by given SubjectID, Activity, variable/ feature with corresponding mean values.
+    The tidyData set includes
+     * SubjectID
+       ** 1..30 IDs of participating subjects
   
-  * Activity
-    ** .WALKING
-    ** .WALKING_UPSTAIRS
-    ** .WALKING_DOWNSTAIRS
-    ** .SITTING
-    ** .STANDING
-    ** .LAYING
+     * Activity
+       ** .WALKING
+       ** .WALKING_UPSTAIRS
+       ** .WALKING_DOWNSTAIRS
+       ** .SITTING
+       ** .STANDING
+       ** .LAYING
   
-  * variable
-  Variables/ feature names with descriptive names (Base feature names as described in features.txt and features_info.txt)
+    * variable
+    
+        Variables/ feature names with descriptive names (Base feature names as described in features.txt and  features_info.txt)
   
-  *  Changes to make names descriptive - 
-        ** Feature names starting with 't' updated to start with 'time'
-	** Feature names starting with 'f' updated to start with 'freq'
-	** "()" updated to fun - abbreviation of function
-  
-* .timeBodyAcc-meanfun-X
-** .timeBodyAcc-meanfun-Y
-** .timeBodyAcc-meanfun-Z
-** .timeGravityAcc-meanfun-X
-** .timeGravityAcc-meanfun-Y
-** .timeGravityAcc-meanfun-Z
-** .timeBodyAccJerk-meanfun-X
-** .timeBodyAccJerk-meanfun-Y
-** .timeBodyAccJerk-meanfun-Z
-** .timeBodyGyro-meanfun-X
-** .timeBodyGyro-meanfun-Y
-** .timeBodyGyro-meanfun-Z
-** .timeBodyGyroJerk-meanfun-X
-** .timeBodyGyroJerk-meanfun-Y
-** .timeBodyGyroJerk-meanfun-Z
-** .timeBodyAccMag-meanfun
-** .timeGravityAccMag-meanfun
-** .timeBodyAccJerkMag-meanfun
-** .timeBodyGyroMag-meanfun
-** .timeBodyGyroJerkMag-meanfun
-** .freqBodyAcc-meanfun-X
-** .freqBodyAcc-meanfun-Y
-** .freqBodyAcc-meanfun-Z
-** .freqBodyAccJerk-meanfun-X
-** .freqBodyAccJerk-meanfun-Y
-** .freqBodyAccJerk-meanfun-Z
-** .freqBodyGyro-meanfun-X
-** .freqBodyGyro-meanfun-Y
-** .freqBodyGyro-meanfun-Z
-** .freqBodyAccMag-meanfun
-** .freqBodyBodyAccJerkMag-meanfun
-** .freqBodyBodyGyroMag-meanfun
-** .freqBodyBodyGyroJerkMag-meanfun
-** .timeBodyAcc-stdfun-X
-** .timeBodyAcc-stdfun-Y
-** .timeBodyAcc-stdfun-Z
-** .timeGravityAcc-stdfun-X
-** .timeGravityAcc-stdfun-Y
-** .timeGravityAcc-stdfun-Z
-** .timeBodyAccJerk-stdfun-X
-** .timeBodyAccJerk-stdfun-Y
-** .timeBodyAccJerk-stdfun-Z
-** .timeBodyGyro-stdfun-X
-** .timeBodyGyro-stdfun-Y
-** .timeBodyGyro-stdfun-Z
-** .timeBodyGyroJerk-stdfun-X
-** .timeBodyGyroJerk-stdfun-Y
-** .timeBodyGyroJerk-stdfun-Z
-** .timeBodyAccMag-stdfun
-** .timeGravityAccMag-stdfun
-** .timeBodyAccJerkMag-stdfun
-** .timeBodyGyroMag-stdfun
-** .timeBodyGyroJerkMag-stdfun
-** .freqBodyAcc-stdfun-X
-** .freqBodyAcc-stdfun-Y
-** .freqBodyAcc-stdfun-Z
-** .freqBodyAccJerk-stdfun-X
-** .freqBodyAccJerk-stdfun-Y
-** .freqBodyAccJerk-stdfun-Z
-** .freqBodyGyro-stdfun-X
-** .freqBodyGyro-stdfun-Y
-** .freqBodyGyro-stdfun-Z
-** .freqBodyAccMag-stdfun
-** .freqBodyBodyAccJerkMag-stdfun
-** .freqBodyBodyGyroMag-stdfun
-** .freqBodyBodyGyroJerkMag-stdfun
-  
-  * average
-   mean value for each variable for a given SubjectID and Activity
+    *  Changes to make names descriptive - 
+       ** Feature names starting with 't' updated to start with 'time'
+       ** Feature names starting with 'f' updated to start with 'freq'
+       ** "()" updated to fun - abbreviation of function
+ 
+    * List of all the features/ variables
+       ** .timeBodyAcc-meanfun-X
+
+       ** .timeBodyAcc-meanfun-Y
+
+       ** .timeBodyAcc-meanfun-Z
+
+       ** .timeGravityAcc-meanfun-X
+
+       ** .timeGravityAcc-meanfun-Y
+
+       ** .timeGravityAcc-meanfun-Z
+
+       ** .timeBodyAccJerk-meanfun-X
+
+       ** .timeBodyAccJerk-meanfun-Y
+
+       ** .timeBodyAccJerk-meanfun-Z
+
+       ** .timeBodyGyro-meanfun-X
+
+       ** .timeBodyGyro-meanfun-Y
+
+       ** .timeBodyGyro-meanfun-Z
+
+       ** .timeBodyGyroJerk-meanfun-X
+
+       ** .timeBodyGyroJerk-meanfun-Y
+
+       ** .timeBodyGyroJerk-meanfun-Z
+
+       ** .timeBodyAccMag-meanfun
+
+       ** .timeGravityAccMag-meanfun
+
+       ** .timeBodyAccJerkMag-meanfun
+
+       ** .timeBodyGyroMag-meanfun
+
+       ** .timeBodyGyroJerkMag-meanfun
+
+       ** .freqBodyAcc-meanfun-X
+
+       ** .freqBodyAcc-meanfun-Y
+
+       ** .freqBodyAcc-meanfun-Z
+
+       ** .freqBodyAccJerk-meanfun-X
+
+       ** .freqBodyAccJerk-meanfun-Y
+
+       ** .freqBodyAccJerk-meanfun-Z
+
+       ** .freqBodyGyro-meanfun-X
+
+       ** .freqBodyGyro-meanfun-Y
+
+       ** .freqBodyGyro-meanfun-Z
+
+       ** .freqBodyAccMag-meanfun
+
+       ** .freqBodyBodyAccJerkMag-meanfun
+
+       ** .freqBodyBodyGyroMag-meanfun
+ 
+       ** .freqBodyBodyGyroJerkMag-meanfun
+ 
+       ** .timeBodyAcc-stdfun-X
+
+       ** .timeBodyAcc-stdfun-Y
+
+       ** .timeBodyAcc-stdfun-Z
+
+       ** .timeGravityAcc-stdfun-X
+
+       ** .timeGravityAcc-stdfun-Y
+
+       ** .timeGravityAcc-stdfun-Z
+
+       ** .timeBodyAccJerk-stdfun-X
+
+       ** .timeBodyAccJerk-stdfun-Y
+
+       ** .timeBodyAccJerk-stdfun-Z
+
+       ** .timeBodyGyro-stdfun-X
+
+       ** .timeBodyGyro-stdfun-Y
+
+       ** .timeBodyGyro-stdfun-Z
+
+       ** .timeBodyGyroJerk-stdfun-X
+
+       ** .timeBodyGyroJerk-stdfun-Y
+
+       ** .timeBodyGyroJerk-stdfun-Z
+
+       ** .timeBodyAccMag-stdfun
+
+       ** .timeGravityAccMag-stdfun
+
+       ** .timeBodyAccJerkMag-stdfun
+
+       ** .timeBodyGyroMag-stdfun
+
+       ** .timeBodyGyroJerkMag-stdfun
+
+       ** .freqBodyAcc-stdfun-X
+
+       ** .freqBodyAcc-stdfun-Y
+
+       ** .freqBodyAcc-stdfun-Z
+
+       ** .freqBodyAccJerk-stdfun-X
+ 
+       ** .freqBodyAccJerk-stdfun-Y
+
+       ** .freqBodyAccJerk-stdfun-Z
+
+       ** .freqBodyGyro-stdfun-X
+
+       ** .freqBodyGyro-stdfun-Y
+
+       ** .freqBodyGyro-stdfun-Z
+
+       ** .freqBodyAccMag-stdfun
+
+       ** .freqBodyBodyAccJerkMag-stdfun
+
+       ** .freqBodyBodyGyroMag-stdfun
+
+       ** .freqBodyBodyGyroJerkMag-stdfun
+
+   * average
+
+      mean value for each variable for a given SubjectID and Activity
    
    ==================================================================
    Notes: Explanation of steps performed during the analysis.
    ==================================================================
-   setwd to the desired location. "UCI HAR Dataset" is assumed to be the working directory for all the paths.
+  
 
 --------------------------------------------------------------------------------------
 PART 1
