@@ -93,8 +93,8 @@ mean_std_set$Activity <- factor(mean_std_set$Activity, levels=c(1,2,3,4,5,6), la
 #-------------------------------------------------------------------------------------------------------------------------
 # PART 4 - Appropriately labels the data set with descriptive variable names. 
 #-------------------------------------------------------------------------------------------------------------------------
-# Make the column names more descriptive
 
+# Make the column names more descriptive
 # Change the first 't' in the feature name to 'time' using gsub
 descTimeNames <- gsub("^t","time",colnames(mean_std_set))
 # Change the first 'f' in the feature name to 'freq' using gsub
@@ -107,10 +107,12 @@ desc_labels <- gsub("\\()","fun",descTimeFreqNames)
 colnames(mean_std_set) <- desc_labels
 # mean_std_set contains all the data with descriptive frequency names
 
+
 #-------------------------------------------------------------------------------------------------------------------------
 # PART 5 - From the data set in step 4, creates a second, independent tidy data set with the 
 # average of each variable for each activity and each subject.
 #-------------------------------------------------------------------------------------------------------------------------
+
 # For each SubjectID and Activity, value for each variable will be listed
 library(reshape2)
 dataMelt <- melt(mean_std_set,id=c("SubjectID","Activity"))
