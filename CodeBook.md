@@ -148,297 +148,205 @@ This file contains
     Data frame with summarised data grouped by given SubjectID, Activity, variable/ feature with corresponding mean values.
     The tidyData set includes
      * SubjectID
-       ** 1..30 IDs of participating subjects
+       1..30 IDs of participating subjects
   
      * Activity
-       ** .WALKING
-       ** .WALKING_UPSTAIRS
-       ** .WALKING_DOWNSTAIRS
-       ** .SITTING
-       ** .STANDING
-       ** .LAYING
+        .WALKING
+        .WALKING_UPSTAIRS
+        .WALKING_DOWNSTAIRS
+        .SITTING
+        .STANDING
+        .LAYING
   
     * variable
     
         Variables/ feature names with descriptive names (Base feature names as described in features.txt and  features_info.txt)
   
     *  Changes to make names descriptive - 
-       ** Feature names starting with 't' updated to start with 'time'
-       ** Feature names starting with 'f' updated to start with 'freq'
-       ** "()" updated to fun - abbreviation of function
+        Feature names starting with 't' updated to start with 'time'
+        Feature names starting with 'f' updated to start with 'freq'
+        "()" updated to fun - abbreviation of function
  
     * List of all the features/ variables
-       ** .timeBodyAcc-meanfun-X
+        .timeBodyAcc-meanfun-X
 
-       ** .timeBodyAcc-meanfun-Y
+        .timeBodyAcc-meanfun-Y
 
-       ** .timeBodyAcc-meanfun-Z
+        .timeBodyAcc-meanfun-Z
 
-       ** .timeGravityAcc-meanfun-X
+        .timeGravityAcc-meanfun-X
 
-       ** .timeGravityAcc-meanfun-Y
+        .timeGravityAcc-meanfun-Y
 
-       ** .timeGravityAcc-meanfun-Z
+        .timeGravityAcc-meanfun-Z
 
-       ** .timeBodyAccJerk-meanfun-X
+        .timeBodyAccJerk-meanfun-X
 
-       ** .timeBodyAccJerk-meanfun-Y
+        .timeBodyAccJerk-meanfun-Y
 
-       ** .timeBodyAccJerk-meanfun-Z
+        .timeBodyAccJerk-meanfun-Z
 
-       ** .timeBodyGyro-meanfun-X
+        .timeBodyGyro-meanfun-X
 
-       ** .timeBodyGyro-meanfun-Y
+        .timeBodyGyro-meanfun-Y
 
-       ** .timeBodyGyro-meanfun-Z
+        .timeBodyGyro-meanfun-Z
 
-       ** .timeBodyGyroJerk-meanfun-X
+        .timeBodyGyroJerk-meanfun-X
 
-       ** .timeBodyGyroJerk-meanfun-Y
+        .timeBodyGyroJerk-meanfun-Y
 
-       ** .timeBodyGyroJerk-meanfun-Z
+        .timeBodyGyroJerk-meanfun-Z
 
-       ** .timeBodyAccMag-meanfun
+        .timeBodyAccMag-meanfun
 
-       ** .timeGravityAccMag-meanfun
+        .timeGravityAccMag-meanfun
 
-       ** .timeBodyAccJerkMag-meanfun
+        .timeBodyAccJerkMag-meanfun
 
-       ** .timeBodyGyroMag-meanfun
+        .timeBodyGyroMag-meanfun
 
-       ** .timeBodyGyroJerkMag-meanfun
+        .timeBodyGyroJerkMag-meanfun
 
-       ** .freqBodyAcc-meanfun-X
+        .freqBodyAcc-meanfun-X
 
-       ** .freqBodyAcc-meanfun-Y
+        .freqBodyAcc-meanfun-Y
 
-       ** .freqBodyAcc-meanfun-Z
+        .freqBodyAcc-meanfun-Z
 
-       ** .freqBodyAccJerk-meanfun-X
+        .freqBodyAccJerk-meanfun-X
 
-       ** .freqBodyAccJerk-meanfun-Y
+        .freqBodyAccJerk-meanfun-Y
 
-       ** .freqBodyAccJerk-meanfun-Z
+        .freqBodyAccJerk-meanfun-Z
 
-       ** .freqBodyGyro-meanfun-X
+        .freqBodyGyro-meanfun-X
 
-       ** .freqBodyGyro-meanfun-Y
+        .freqBodyGyro-meanfun-Y
 
-       ** .freqBodyGyro-meanfun-Z
+        .freqBodyGyro-meanfun-Z
 
-       ** .freqBodyAccMag-meanfun
+        .freqBodyAccMag-meanfun
 
-       ** .freqBodyBodyAccJerkMag-meanfun
+        .freqBodyBodyAccJerkMag-meanfun
 
-       ** .freqBodyBodyGyroMag-meanfun
+        .freqBodyBodyGyroMag-meanfun
  
-       ** .freqBodyBodyGyroJerkMag-meanfun
+        .freqBodyBodyGyroJerkMag-meanfun
  
-       ** .timeBodyAcc-stdfun-X
+        .timeBodyAcc-stdfun-X
 
-       ** .timeBodyAcc-stdfun-Y
+        .timeBodyAcc-stdfun-Y
 
-       ** .timeBodyAcc-stdfun-Z
+        .timeBodyAcc-stdfun-Z
 
-       ** .timeGravityAcc-stdfun-X
+        .timeGravityAcc-stdfun-X
 
-       ** .timeGravityAcc-stdfun-Y
+        .timeGravityAcc-stdfun-Y
 
-       ** .timeGravityAcc-stdfun-Z
+        .timeGravityAcc-stdfun-Z
 
-       ** .timeBodyAccJerk-stdfun-X
+        .timeBodyAccJerk-stdfun-X
 
-       ** .timeBodyAccJerk-stdfun-Y
+        .timeBodyAccJerk-stdfun-Y
 
-       ** .timeBodyAccJerk-stdfun-Z
+        .timeBodyAccJerk-stdfun-Z
 
-       ** .timeBodyGyro-stdfun-X
+        .timeBodyGyro-stdfun-X
 
-       ** .timeBodyGyro-stdfun-Y
+        .timeBodyGyro-stdfun-Y
 
-       ** .timeBodyGyro-stdfun-Z
+        .timeBodyGyro-stdfun-Z
 
-       ** .timeBodyGyroJerk-stdfun-X
+        .timeBodyGyroJerk-stdfun-X
 
-       ** .timeBodyGyroJerk-stdfun-Y
+        .timeBodyGyroJerk-stdfun-Y
 
-       ** .timeBodyGyroJerk-stdfun-Z
+        .timeBodyGyroJerk-stdfun-Z
 
-       ** .timeBodyAccMag-stdfun
+        .timeBodyAccMag-stdfun
 
-       ** .timeGravityAccMag-stdfun
+        .timeGravityAccMag-stdfun
 
-       ** .timeBodyAccJerkMag-stdfun
+        .timeBodyAccJerkMag-stdfun
 
-       ** .timeBodyGyroMag-stdfun
+        .timeBodyGyroMag-stdfun
 
-       ** .timeBodyGyroJerkMag-stdfun
+        .timeBodyGyroJerkMag-stdfun
 
-       ** .freqBodyAcc-stdfun-X
+        .freqBodyAcc-stdfun-X
 
-       ** .freqBodyAcc-stdfun-Y
+        .freqBodyAcc-stdfun-Y
 
-       ** .freqBodyAcc-stdfun-Z
+        .freqBodyAcc-stdfun-Z
 
-       ** .freqBodyAccJerk-stdfun-X
+        .freqBodyAccJerk-stdfun-X
  
-       ** .freqBodyAccJerk-stdfun-Y
+        .freqBodyAccJerk-stdfun-Y
 
-       ** .freqBodyAccJerk-stdfun-Z
+        .freqBodyAccJerk-stdfun-Z
 
-       ** .freqBodyGyro-stdfun-X
+        .freqBodyGyro-stdfun-X
 
-       ** .freqBodyGyro-stdfun-Y
+        .freqBodyGyro-stdfun-Y
 
-       ** .freqBodyGyro-stdfun-Z
+        .freqBodyGyro-stdfun-Z
 
-       ** .freqBodyAccMag-stdfun
+        .freqBodyAccMag-stdfun
 
-       ** .freqBodyBodyAccJerkMag-stdfun
+        .freqBodyBodyAccJerkMag-stdfun
 
-       ** .freqBodyBodyGyroMag-stdfun
+        .freqBodyBodyGyroMag-stdfun
 
-       ** .freqBodyBodyGyroJerkMag-stdfun
+        .freqBodyBodyGyroJerkMag-stdfun
 
    * average
 
       mean value for each variable for a given SubjectID and Activity
    
-   ==================================================================
-   Notes: Explanation of steps performed during the analysis.
-   ==================================================================
+
+## Quick overview of the asnalysis
+
+Note: For detailed explanation of the steps in the analysis process, refer to the README.md  (https://github.com/kkamtikar/DataCleaningProject/blob/master/README.md) file's "Explanation of steps performed during the analysis" section.
   
 
---------------------------------------------------------------------------------------
-PART 1
---------------------------------------------------------------------------------------
-1. xtrain <- read.table("./train/X_train.txt", header=FALSE, sep="")
-Read X_train.txt data into xtrain using read.table. Set the header to FALSE as X_train.txt does not contain header row. By default space is considered as the separator. Note: Do NOT set explicit space sep =" ".
-xtrain data frame has 7352 rows and 561 columns.
+1. Read the X_train and X_test data from train and test folder in data folder and create a combined set of data called clubx.
 
-2. xtest <- read.table("./test/X_test.txt", header=FALSE, sep="")
-Read X_test.txt data into xtest using read.table as described in step 1. 
-xtest data frame has 2947 rows and 561 columns.
+2. Read the y_train and y_test data from train and test folder in data folder and create a combined set of data called cluby.This is activity related data.
 
-3. Combine the rows of the two data frames in step 1 and 2. The number of columns for xtrain and xtest is same and rbind operation can be performed on the two sets.
-Store the result containing rows from xtrain and xtest (in that order).
-clubx <- rbind(xtrain,xtest)
+3. Read the subject_train and subject_test data from train and test folder in data folder and create a combined set of data called clubSub.This is subjects related data.
 
-clubx contains 10299 rows and 561 columns. [ First 7352 rows from xtrain followed by 2947 rows from xtest. ]
+4. Create a combined set using all the three data sets - clubx, cluby, and clubSub and store it in mergeDataSet.
 
-Similarly read data from y_train.txt and y_test.txt into data frames and combine the rows from 
-those data frames into a single data frame called cluby.
+5. Read features into features data set and create a list of characters called featuresNames using "Activity", "SubjectID", and the features names from the features set.
 
-4. ytrain <- read.table("./train/y_train.txt", header=FALSE, sep="")
-Read y_train.txt data into ytrain using read.table. 
+6. Set column names for mergeDataset.
 
-5. ytest <- read.table("./test/y_test.txt", header=FALSE, sep="")
-Read t_test.txt data into ytest using read.table.
+7. Create subsets of columns for mean() and std() features. The assumption is that only the feature names that have mean() and std() be considered and that excludes feature names that contain these keywords - for example meanfreq and angle variables are not considered as they do not actually perform the mean() and std().
+Each subset yields 33 columns and additionally data for Activity and SubjectIDs be also retained. In total there are 68 columns. The resulting data set is stored as mean_std_set.
+The value for each feature is normalized between -1 and 1.
 
-6. cluby <- rbind(ytrain, ytest)
-cluby contains 10299 rows and 1 column. 
+8. Update the activity data with corresponding activity labels. Each of the activity number (ranging from 1 to 6) is replaced with the activity associated e.g. WALKING, STANDING etc. 
+1 - WALKING
 
-Similarly read data from subject_train.txt and subject_test.txt into data frames and combine the rows from those data frames into a single data frame called clubSub.
+2 - WALKING_UPSTAIRS
+3
+3 - WALKING_DOWNSTAIRS
 
-7. subTrain <- read.table("./train/subject_train.txt", header=FALSE, sep="")
-Read data from subject_train.txt into subTrain using read.table. This data frame has 7352 rows and only 1 column for the 30 subjects (with IDs 1 to 30) who participated
+4 - SITTING
 
-8. subTest <- read.table("./test/subject_test.txt", header=FALSE, sep="")
-Read data from subject_train.txt into subTrain using read.table. This data frame has 2947 rows and only 1 column for the 30 subjects (with IDs 1 to 30) who participated
+5 - STANDING
 
-9. clubSub <- rbind(subTrain, subTest)
-clubSub has all the rows for subject IDs from both training and test sets.
+6 - LAYING
 
-10. mergeDataSet <- cbind(cbind(cluby, clubSub), clubx)
-Create a data set which combines all the columns of cluby and clubSub and combines the results with clubx.
-It is important to note the order. the inner cbind combines the cluby and clubSub first in that order.
-cluby and clubSub each have single column for activities and subject IDs respectively. clubx has 561 columns.
-After this step, the mergeDataSet will contain all the training and testing data sets combined with their activities and subject IDS details, thus making it a 563 column 
-data frame [ 2 + 561 ].
+9.Feature names are changed to more descriptive and readable names.
+Feature names starting with 't' are time domain features and the 't' is updated to 'time'
+Feature names starting with 'f' are time domain features and the 'f' is updated to 'freq'
+The parenthese in the names are replaced with "fun", an abbreviation for function.
+the updated column names are assigned to the mean_std_set data frame.
 
-11. The data frame needs to be assigned with column names corresponding to the features/ variables listed in features.txt.
-features <- read.table("./features.txt", header=FALSE, sep="")
-Read data from features.txt into features data frame.
+10. Using reshape2 package, mean_std_set data is melted into dataMelt for each SubjectID and Activity.
 
-12. featuresNames <- c("Activity", "SubjectID",as.character(features[,2]))
-features data frame described in step 11 has ID and feature Name details. These feature names in column 2 can be used to assign column name values to the mergeDataset.
-However, features[,2] is of type factor and cannot be directly assigned to the list of characters.
-So it needs to converted to character using as.character(features[,2]). features.txt has 561 features but we need to add column names for Activity and Subject ID before the feature names to match the ordered data as described in step 10 [ 2 + 561 ].
-
-13. Assign these featuresNames as column names to the mergeDataSet data frame using colnames.
-colnames(mergeDataSet) <- featuresNames
-
---------------------------------------------------------------------------------------
-PART 2
---------------------------------------------------------------------------------------
-Create a subset of the features for mean
-Based on the information in features_info.txt, 
-mean(): Mean value. There are some features that contain the term "mean" but they do not necessarily depict mean feature.
-For e.g. meanFreq() and angle(). These are listed as separate features. So for the purposes of this analysis, meanSet data set ignores such cases
-and considers only cases which are related to mean(). 
-14. meanSet <- mergeDataSet[,grep("mean()", colnames(mergeDataSet),fixed=TRUE)]
-Using grep the exact pattern "mean()" is matched against the feature names/ column names of the mergeDataset using fixed = TRUE.
-This ignores string matches such as meanfreq, angle(X,gravityMean) intentionally.
-A subset called meanSet is created which contains only columns that match the afore mentioned mean features. It contains 33 columns.
-
-15. Similarly, a subset containing features corresponding to std() is created.
-stdSet <- mergeDataSet[,grep("std()", colnames(mergeDataSet),fixed=TRUE)]
-
-*Note*: A common set is not created to have exact matches for each patterns.
-commonSet <- mergeDataSet[,grep("std()|std()|Activity|SubjectID", colnames(mergeDataSet))]
-
-16. Similarly, a subset containing Activity and Subject ID is also created.
-act_sub <- mergeDataSet[,grep("Activity|SubjectID", colnames(mergeDataSet))]
-
-17. mean_std_set <- cbind(cbind(act_sub,meanSet),stdSet)
-As described in step 10, nested cbinds are used to combine columns from all the three data frames. 
-mean_std_set data frame with columns for Activity and SubjectID, and features corresponding to "mean()", "std()" (in that order)
- 
--------------------------------------------------------------------------------------- 
-PART 3
---------------------------------------------------------------------------------------
-18. Read activity data from activity_labels.txt into activityData data frame.
-activityData <- read.table("./activity_labels.txt", header=FALSE, sep="")
-
-19. activityData contains 2 columns and column 2 contains labels which need to be mapped/assigned to the data in the mean_std_set's Activity column. 
-As described in step 12, 
-activity_labels <- activityData[,2]  
-
-20. Assign the activity labels to the entries corresponding to the Activity column in the mean_std_set.
-There are 6 activities defined by 6 levels.
-mean_std_set$Activity <- factor(mean_std_set$Activity, levels=c(1,2,3,4,5,6), labels=activity_labels)
-After this step, the numbers in the Activity column in mean_std_set are replaced with the activity labels such as 1 for WALKING, 5 for STANDING etc.
- 
-PART 4
---------------------------------------------------------------------------------------
-These steps are performed to make the column names more descriptive and readable.
-
-21. Using gsub replace the first occurrence of t if the feature name begins with t to 'time'. '^t' is used to accomplish this.
-descTimeNames <- gsub("^t","time", colnames(mean_std_set))
-
-22. Similarly, feature names starting with 'f' are updated to start with 'freq'. 
-descTimeFreqNames <- gsub("^f","freq",descTimeNames)
-
-23. As the "()" parentheses are not intuitive, replace them with fun - abbreviation for function.
-desc_labels <- gsub("\\()","fun",descTimeFreqNames)
-
-24. Apply these updated descriptive labels to the data set's column names
-colnames(mean_std_set) <- desc_labels
-
--------------------------------------------------------------------------------------- 
-PART 5
---------------------------------------------------------------------------------------
-25. reshape2 package is used to melt data in the desired form.
-dataMelt <- melt(mean_std_set,id=c("SubjectID","Activity"))
-For each SubjectID and Activity, value for each variable will be listed
-dataMelt has 4 columns - SubjectID, Activity, variable and value corresponding to each of these combinations. 
-The data is transformed from wide to long format.
-
-26. Using summarise from dplyr package, tidyData is created.
-With the melted data - dataMelt created in step 25, group_by is used for each of the SubjectID, Activity and variable and mean is calculated on the value for each combination. The mean column is displayed as "average".
-tidyData <- summarise(group_by(dataMelt, SubjectID, Activity,variable), average=mean(value))
-
-27. Write the tidyData into to txt file with row.names=FALSE and separator set to space.
-write.table(tidyData,file="./TidyData.txt",row.names=FALSE, sep=" ")
-Check the created file at the specified location.
-Confirm that the data is in tidy format. There is one row for each observation and one column for each variable.
+11. Using dplyr package, summarise the melted data, grouped by subject ID, Activity and feature/ variable and calculate mean value and display as average.
+Store the tidy data in TidyData and write to TidyData.txt.
+The final data is tidy data that follows the principles of tidy data. 
