@@ -19,20 +19,20 @@
 #-------------------------------------------------------------------------------------------------------------------------
 
 # Read training and test data files from train and test folder respectively (data filenames starting with X_)
-xtrain <- read.table("./train/X_train.txt", header=FALSE, sep="")
-xtest <- read.table("./test/X_test.txt", header=FALSE, sep="")
+xtrain <- read.table("./data/train/X_train.txt", header=FALSE, sep="")
+xtest <- read.table("./data/test/X_test.txt", header=FALSE, sep="")
 # Combine the rows of the training and test data
 clubx <- rbind(xtrain,xtest)
 
 # Read activity data for training and test from train and test folder respectively (data filenames starting with y_)
-ytrain <- read.table("./train/y_train.txt", header=FALSE, sep="")
-ytest <- read.table("./test/y_test.txt", header=FALSE, sep="")
+ytrain <- read.table("./data/train/y_train.txt", header=FALSE, sep="")
+ytest <- read.table("./data/test/y_test.txt", header=FALSE, sep="")
 # Combine the rows of the training and test activity data
 cluby <- rbind(ytrain, ytest)
 
 # Read Subject IDs for training and test data from train and test folder respectively (data filenames starting with subject_)
-subTrain <- read.table("./train/subject_train.txt", header=FALSE, sep="")
-subTest <- read.table("./test/subject_test.txt", header=FALSE, sep="")
+subTrain <- read.table("./data/train/subject_train.txt", header=FALSE, sep="")
+subTest <- read.table("./data/test/subject_test.txt", header=FALSE, sep="")
 # Combine the rows of the training and test Subjects data
 clubSub <- rbind(subTrain, subTest)
 
@@ -41,7 +41,7 @@ mergeDataSet <- cbind(cbind(cluby, clubSub), clubx)
 # mergeDataSet contains features data, activity and subject data combined for training and test sets.
 
 # Read features from features.txt file
-features <- read.table("./features.txt", header=FALSE, sep="")
+features <- read.table("./data/features.txt", header=FALSE, sep="")
 
 # features data frame contains identifier and variable / feature name.
 # Activity and SubjectID column names be prepended to the features names from features data frame.
@@ -80,7 +80,7 @@ mean_std_set <- cbind(cbind(act_sub,meanSet),stdSet)
 # PART 3 - Uses descriptive activity names to name the activities in the data set
 #-------------------------------------------------------------------------------------------------------------------------
 # Read activity data from activity_labels.txt
-activityData <- read.table("./activity_labels.txt", header=FALSE, sep="")
+activityData <- read.table("./data/activity_labels.txt", header=FALSE, sep="")
 
 # Fetch only the labels to create activity labels vector
 activity_labels <- activityData[,2]   
