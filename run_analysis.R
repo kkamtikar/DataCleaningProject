@@ -4,13 +4,13 @@
 
 # Refer to the README for the project background and files used in the project and deatiled explanation of the steps
 # involved in this analysis.
-# Refer to the CodeBook.md for details of the variables used in this analysis and final output - TidyData.
+# Refer to the CodeBook.md for details of the variables used in this analysis and final output - TidyData, and quick overview
+# of the analysis.
 
-# As described in the README.md, make sure that the zipped file containing data files is downloaded and extracted.
-# UCI HAR Dataset contains train and test folders with all the specified data files.
+# As described in the README.md, make sure that the zipped file containing data files is downloaded, extracted and contents are copied to data folder (in working directory).
+# Data folder contains activity_labels, features, train and test folders with all the specified data files.
 
 # getwd()
-# setwd to the desired location.
 # Set the working directory and/ or all the paths for read.table statements appropriately.
 
 #-------------------------------------------------------------------------------------------------------------------------
@@ -56,11 +56,10 @@ colnames(mergeDataSet) <- featuresNames
 #-------------------------------------------------------------------------------------------------------------------------
 
 # Create a subset of the features for mean
-# Based on the information in features_info.txt, 
+# Based on the information in features_info.txt -
 # mean(): Mean value. There are some features that contain the term "mean" but they do not necessarily depict mean feature.
 # For e.g. meanFreq() and angle(). These are listed as separate features. So for the purposes of this analysis, meanSet data set 
-# ignores such cases and considers only cases which 
-# are related to mean(). 
+# ignores such cases and considers only cases which are related to mean(). 
 
 meanSet <- mergeDataSet[,grep("mean()", colnames(mergeDataSet),fixed=TRUE)]
 
@@ -81,7 +80,7 @@ mean_std_set <- cbind(cbind(act_sub,meanSet),stdSet)
 # Read activity data from activity_labels.txt
 activityData <- read.table("./data/activity_labels.txt", header=FALSE, sep="")
 
-# Fetch only the labels to create activity labels vector
+# Fetch only the labels to create activity labels
 activity_labels <- activityData[,2]   
 
 # Assign the activity labels to the entries corresponding to the Activity column in the mean_std_set
@@ -118,6 +117,7 @@ dataMelt <- melt(mean_std_set,id=c("SubjectID","Activity"))
 
 library(dplyr)
 # Group by Subject ID, Activity and feature name and perform average on the values and create tidyData set.
+# The display order is set to Subject ID, Activity followed by variable.
 tidyData <- summarise(group_by(dataMelt, SubjectID, Activity,variable), average=mean(value))
 
 # Using write.table, write the tidy data set to a text file with row.names set to FALSE
