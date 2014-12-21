@@ -10,21 +10,29 @@ Data required and in the scope of the project can be downloaded from
 https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 It is a zip file with "UCI HAR Dataset" folder which contains all the required data sets.
 
-X_test,y_test and subject_test files from test folder and  X_train, y_train and subject_train from train folder, activity_labels and features are are the primary data sets used in this project. 
+X_test,y_test and subject_test files from test folder and  X_train, y_train and subject_train files from train folder, activity_labels and features are the primary data sets used in this project. 
 
 y_train and y_test contain activity IDs and subject_train and subject_test contain SubjectIDs.
 Details about the activities can be found in activity_labels. features and features_info provide information about the features used in the project.
 
 
 **Files in the project:**
-All these files/folders are present in the working directory.
+Create data folder in working directory. Copy all the contents (folders and files) from "UCI HAR Dataset" extracted from the zip file.
+
+All these files/folders listed below are present in the working directory.
+Readme.md, CodeBook.md, run_analysis.R, data folder, and TidyData.txt
+
+* Input data: data folder files
+* Data Analysis: run_analysis.R
+* Output: TidyData.txt is created when the analysis is executed.
+
 
 * *README.md* - This file that provides project background, details about files used, detailed explanation of the analysis (run_analysis.R) and notes.
 
 * *CodeBook.md* has details about all the data elements used in the analysis process (run_analysis) and variables in TidyData - the file containing final output data set. It also provides overview of the steps used in the the analysis process (run_analysis). For detailed explanation refer to the section "Explanation of steps performed during the analysis" below.
 
 * *run_analysis.R* 
-As described on the Coursera project description - 
+As described in the Coursera project description - 
 The solution has 5 parts that address the pieces in the assignment. 
 The run_analysis.R-
 
@@ -38,7 +46,7 @@ The run_analysis.R-
 
 5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
-* *TidyData.txt* - The final tidy data output containing average values for each variable for a given SubjectID and Activity.
+* *TidyData.txt* - The final tidy data output containing average values for each variable for a given SubjectID and Activity generated as a result of execution of data analysis.
 
 * *data* - (Create data folder in the working directory.) Extract the contents of "UCI HAR Dataset" (from the zipped file mentioned above) and copy the contents - test and train folders with data files, activity_labels, features, features_info etc. to the data folder.
 
@@ -61,7 +69,7 @@ This is the assumption for all the paths in the run_analysis.R.
 PART 1
 --------------------------------------------------------------------------------------
 1. xtrain <- read.table("./data/train/X_train.txt", header=FALSE, sep="")
-Read X_train.txt data into xtrain using read.table. Set the header to FALSE as X_train.txt does not contain header row. By default space is considered as the separator. Note: Do NOT set explicit space sep =" ".
+Read X_train.txt data into xtrain using read.table. Set the header to FALSE as X_train.txt does not contain header row. By default, space is considered as the separator. Note: Do NOT set explicit space sep =" ".
 xtrain data frame has 7352 rows and 561 columns.
 
 2. xtest <- read.table("./data/test/X_test.txt", header=FALSE, sep="")
@@ -99,7 +107,7 @@ clubSub has all the rows for subject IDs from both training and test sets.
 
 10. mergeDataSet <- cbind(cbind(cluby, clubSub), clubx)
 Create a data set which combines all the columns of cluby and clubSub and combines the results with clubx.
-It is important to note the order. the inner cbind combines the cluby and clubSub first in that order.
+It is important to note the order. The inner cbind combines the cluby and clubSub first in that order.
 cluby and clubSub each have single column for activities and subject IDs respectively. clubx has 561 columns.
 After this step, the mergeDataSet will contain all the training and testing data sets combined with their activities and subject IDS details, thus making it a 563 column 
 data frame [ 2 + 561 ].
@@ -120,20 +128,16 @@ colnames(mergeDataSet) <- featuresNames
 PART 2
 --------------------------------------------------------------------------------------
 Create a subset of the features for mean
-Based on the information in features_info.txt, 
-mean(): Mean value. There are some features that contain the term "mean" but they do not necessarily depict mean feature.
-For e.g. meanFreq() and angle(). These are listed as separate features. So for the purposes of this analysis, meanSet data set ignores such cases
-and considers only cases which are related to mean(). 
+Assumption: Based on the information in features_info.txt, mean(): Mean value. There are some features that contain the term "mean" but they do not necessarily depict mean feature.
+For e.g. meanFreq() and angle(). These are listed as separate features. So for the purposes of this analysis, meanSet data set ignores such cases and considers only cases which are related to mean(). 
+
 14. meanSet <- mergeDataSet[,grep("mean()", colnames(mergeDataSet),fixed=TRUE)]
 Using grep the exact pattern "mean()" is matched against the feature names/ column names of the mergeDataset using fixed = TRUE.
 This ignores string matches such as meanfreq, angle(X,gravityMean) intentionally.
 A subset called meanSet is created which contains only columns that match the afore mentioned mean features. It contains 33 columns.
 
-15. Similarly, a subset containing features corresponding to std() is created.
+15. Similarly, a subset containing features corresponding to std() is created. It contains 33 columns.
 stdSet <- mergeDataSet[,grep("std()", colnames(mergeDataSet),fixed=TRUE)]
-
-*Note*: A common set is not created to have exact matches for each patterns.
-commonSet <- mergeDataSet[,grep("std()|std()|Activity|SubjectID", colnames(mergeDataSet))]
 
 16. Similarly, a subset containing Activity and Subject ID is also created.
 act_sub <- mergeDataSet[,grep("Activity|SubjectID", colnames(mergeDataSet))]
@@ -161,16 +165,18 @@ PART 4
 --------------------------------------------------------------------------------------
 These steps are performed to make the column names more descriptive and readable.
 
-21. Using gsub replace the first occurrence of t if the feature name begins with t to 'time'. '^t' is used to accomplish this.
+21. Using gsub replace the first occurrence of t if the feature name begins with t to 'time'. '^t' is used to accomplish this replacement.
 descTimeNames <- gsub("^t","time", colnames(mean_std_set))
 
 22. Similarly, feature names starting with 'f' are updated to start with 'freq'. 
+Use the updated set - descTimeNames- created in step 21.
 descTimeFreqNames <- gsub("^f","freq",descTimeNames)
 
 23. As the "()" parentheses are not intuitive, replace them with fun - abbreviation for function.
+Perform gsub on descTimeFreqNames created in step 22.
 desc_labels <- gsub("\\()","fun",descTimeFreqNames)
 
-24. Apply these updated descriptive labels to the data set's column names
+24. Apply these final updated descriptive labels to the data set's column names
 colnames(mean_std_set) <- desc_labels
 
 -------------------------------------------------------------------------------------- 
@@ -178,11 +184,10 @@ PART 5
 --------------------------------------------------------------------------------------
 25. reshape2 package is used to melt data in the desired form.
 dataMelt <- melt(mean_std_set,id=c("SubjectID","Activity"))
-For each SubjectID and Activity, value for each variable will be listed
+For each SubjectID and Activity, value for each variable will be listed.
 dataMelt has 4 columns - SubjectID, Activity, variable and value corresponding to each of these combinations. 
-The data is transformed from wide to long format.
 
-26. Using summarise from dplyr package, tidyData is created.
+26. The data is transformed from wide to long format. Using summarise from dplyr package, tidyData is created.
 With the melted data - dataMelt created in step 25, group_by is used for each of the SubjectID, Activity and variable and mean is calculated on the value for each combination. The mean column is displayed as "average".
 tidyData <- summarise(group_by(dataMelt, SubjectID, Activity,variable), average=mean(value))
 
@@ -190,4 +195,3 @@ tidyData <- summarise(group_by(dataMelt, SubjectID, Activity,variable), average=
 write.table(tidyData,file="./TidyData.txt",row.names=FALSE, sep=" ")
 Check the created file at the specified location.
 Confirm that the data is in tidy format. There is one row for each observation and one column for each variable.
-
