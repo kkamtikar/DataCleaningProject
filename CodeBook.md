@@ -5,8 +5,8 @@ Created by: Kirti Kamtikar
 https://github.com/kkamtikar
 
 This file contains
-* Data dictionary for run_analysis and tidyData.txt
-* Explanation of the steps involved in the process
+* Data dictionary for run_analysis.R and tidyData.txt
+* Overview of the steps involved in the process
 
 *xtrain*
     
@@ -327,26 +327,27 @@ Each subset yields 33 columns and additionally data for Activity and SubjectIDs 
 The value for each feature is normalized between -1 and 1.
 
 8. Update the activity data with corresponding activity labels. Each of the activity number (ranging from 1 to 6) is replaced with the activity associated e.g. WALKING, STANDING etc. 
-1 - WALKING
+   1 - WALKING
 
-2 - WALKING_UPSTAIRS
-3
-3 - WALKING_DOWNSTAIRS
+   2 - WALKING_UPSTAIRS
 
-4 - SITTING
+   3 - WALKING_DOWNSTAIRS
 
-5 - STANDING
+   4 - SITTING
 
-6 - LAYING
+   5 - STANDING
+
+   6 - LAYING
+
 
 9.Feature names are changed to more descriptive and readable names.
-Feature names starting with 't' are time domain features and the 't' is updated to 'time'
-Feature names starting with 'f' are time domain features and the 'f' is updated to 'freq'
-The parenthese in the names are replaced with "fun", an abbreviation for function.
-the updated column names are assigned to the mean_std_set data frame.
+    Feature names starting with 't' are time domain features and the 't' is updated to 'time'
+    Feature names starting with 'f' are time domain features and the 'f' is updated to 'freq'
+    The parentheses in the names are replaced with "fun", an abbreviation for function.
+    The updated column names are assigned to the mean_std_set data frame.
+
 
 10. Using reshape2 package, mean_std_set data is melted into dataMelt for each SubjectID and Activity.
 
-11. Using dplyr package, summarise the melted data, grouped by subject ID, Activity and feature/ variable and calculate mean value and display as average.
-Store the tidy data in TidyData and write to TidyData.txt.
+11. Using dplyr package, summarise the melted data, grouped by subject ID, Activity and feature/ variable and calculate mean value and display as average. Store the tidy data in TidyData and write to TidyData.txt.
 The final data is tidy data that follows the principles of tidy data. 
