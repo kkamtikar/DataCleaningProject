@@ -305,7 +305,7 @@ This file contains
       mean value for each variable for a given SubjectID and Activity
    
 
-## Quick overview of the asnalysis
+## Quick overview of the analysis
 
 Note: For detailed explanation of the steps in the analysis process, refer to the README.md  (https://github.com/kkamtikar/DataCleaningProject/blob/master/README.md) file's "Explanation of steps performed during the analysis" section.
   
@@ -322,11 +322,11 @@ Note: For detailed explanation of the steps in the analysis process, refer to th
 
 6. Set column names for mergeDataset.
 
-7. Create subsets of columns for mean() and std() features. The assumption is that only the feature names that have mean() and std() be considered and that excludes feature names that contain these keywords - for example meanfreq and angle variables are not considered as they do not actually perform the mean() and std().
+7. Create subsets of columns for mean() and std() features. The assumption is that only the feature names that have mean() and std() be considered and that excludes feature names that contain these keywords - for example meanfreq and angle variables are not considered as they do not actually perform the mean() and std() though they contain the word mean.
 Each subset yields 33 columns and additionally data for Activity and SubjectIDs be also retained. In total there are 68 columns. The resulting data set is stored as mean_std_set.
-The value for each feature is normalized between -1 and 1.
+The value for each feature is normalized and bounded within [-1, 1] as described in README for UCI HAR Dataset.
 
-8. Update the activity data with corresponding activity labels. Each of the activity number (ranging from 1 to 6) is replaced with the activity associated e.g. WALKING, STANDING etc. 
+8. Update the activity data with corresponding activity labels. Each of the activity number (ranging from 1 to 6) is replaced with the associated activity level. e.g. WALKING, STANDING etc. 
    1 - WALKING
 
    2 - WALKING_UPSTAIRS
@@ -340,14 +340,11 @@ The value for each feature is normalized between -1 and 1.
    6 - LAYING
 
 
-9.Feature names are changed to more descriptive and readable names.
-    Feature names starting with 't' are time domain features and the 't' is updated to 'time'
-    Feature names starting with 'f' are time domain features and the 'f' is updated to 'freq'
-    The parentheses in the names are replaced with "fun", an abbreviation for function.
-    The updated column names are assigned to the mean_std_set data frame.
+9.Feature names are changed to more descriptive and readable names. Feature names starting with 't' are time domain features and the 't' is updated to 'time'. Feature names starting with 'f' are time domain features and the 'f' is updated to 'freq'. The parentheses in the names are replaced with "fun", an abbreviation for function.
 
+10.The updated column names are assigned to the mean_std_set data frame.
 
-10. Using reshape2 package, mean_std_set data is melted into dataMelt for each SubjectID and Activity.
+11.Using reshape2 package, mean_std_set data is melted into dataMelt for each SubjectID and Activity.
 
-11. Using dplyr package, summarise the melted data, grouped by subject ID, Activity and feature/ variable and calculate mean value and display as average. Store the tidy data in TidyData and write to TidyData.txt.
-The final data is tidy data that follows the principles of tidy data. 
+12.Using dplyr package, summarise the melted data, grouped by subject ID, Activity and feature/ variable and calculate mean value and display as average. Store the tidy data in TidyData and write to TidyData.txt.
+The final data is tidy that follows the principles of tidy data. 
